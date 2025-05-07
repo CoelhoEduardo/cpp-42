@@ -1,6 +1,6 @@
 NAME	=	replace
 
-SRCS	=	main.cpp 
+SRCS	=	main.cpp FileEditor.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
