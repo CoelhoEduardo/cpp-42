@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoelho- <ecoelho-@student.42>             +#+  +:+       +#+        */
+/*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 22:40:24 by ecoelho-          #+#    #+#             */
-/*   Updated: 2025/05/02 23:00:06 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2025/05/07 19:58:15 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-int main(void) {
-  {
-    Weapon weapon = Weapon("Iron hammer");
-    HumanA character("Nate", weapon);
-    character.attack();
-    weapon.setType("shield");
-    character.attack();
-  }
-  {
-    Weapon weapon = Weapon("Desert Eagle");
-    HumanB character2("Jonny");
-    character2.setWeapon(weapon);
-    character2.attack();
-    weapon.setType("shotgun");
-    character2.attack();
-  }
-  return (0);
+int	main(void)
+{
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return (0);
 }
