@@ -30,7 +30,18 @@ FragTrap::~FragTrap() {
     std::cout << "FragTrap " << _name << " shutting down... Goodbye!" << std::endl;
 }
 
-
 void FragTrap::highFivesGuys() {
-    std::cout << "FragTrap " << _name << " wants high fives! ✋" << std::endl;
+    if (_hitPoints > 0) {
+        int enthusiasm = std::rand() % 5 + 1;
+        std::string enthusiasmLevels[] = {
+            "mild", "moderate", "high", "super", "ULTRA MEGA"
+        };
+
+        std::cout << "FragTrap " << _name << " requests a " 
+                  << enthusiasmLevels[enthusiasm-1] 
+                  << " high five! ✋ (Enthusiasm Level: " 
+                  << enthusiasm << "/5)" << std::endl;
+    } else {
+        std::cout << "FragTrap " << _name << " cannot high five - system offline!" << std::endl;
+    }
 }
